@@ -141,7 +141,6 @@ Node* DFS(Node* initial, int* cont){
       push(Stack,aux);
       aux = next(lista);
     }
-    free(nodo);
   }
   
   return NULL;
