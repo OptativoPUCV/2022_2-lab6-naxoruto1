@@ -154,3 +154,9 @@ Sun 27 Nov 2022 11:13:19 PM UTC:
  tests:  10|0
 total_score: 70/70
 7f5501a
+Sun 27 Nov 2022 11:13:56 PM UTC: 
+ sudoku.c | 11 +++--------
+ 1 file changed, 3 insertions(+), 8 deletions(-)
+ tests:  10|0
+total_score: 70/70
+1b789bd
