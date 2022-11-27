@@ -142,3 +142,9 @@ sudoku.c:55:29: error: ‘k’ undeclared (first use in this function)
       |                             ^
 Compilation failed
 961af03
+Sun 27 Nov 2022 11:13:04 PM UTC: 
+ sudoku.c | 58 +++++++++++++++++++++++++++++++++++++++++++---------------
+ 1 file changed, 43 insertions(+), 15 deletions(-)
+ tests:  10|0
+total_score: 70/70
+5865fb0

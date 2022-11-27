@@ -44,14 +44,14 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  //int fila[10];
+  int fila[10];
   int columna[10];
-  int submatriz[10];
+  int matriz[10];
   
   for (int i=0; i<9; i++){
     for (int x=0; x<10; x++) fila[x]= 0;
-    for (int o=0; o<9; o++){
-      if (n->sudo[i][o] != 0){
+    for (int k=0; k<9; k++){
+      if (n->sudo[i][k] != 0){
         if (fila[n->sudo[i][k]] == 1) return 0;
         else fila[n->sudo[i][k]]= 1;
       }
@@ -60,22 +60,22 @@ int is_valid(Node* n){
 
   for (int i=0; i<9; i++){
     for (int y=0; y<10; y++) columna[y]= 0;
-    for (int o=0; o<9; o++){
-      if (n->sudo[o][i] != 0){
-      	if (columna[n->sudo[o][i]] == 1) return 0;
-        else columna[n->sudo[o][i]]= 1;
+    for (int k=0; k<9; k++){
+      if (n->sudo[k][i] != 0){
+      	if (columna[n->sudo[k][i]] == 1) return 0;
+        else columna[n->sudo[k][i]]= 1;
       }
     }
   }
 
   for (int i=0; i< 9; i++){
-    for (int z=0; z<10; z++) submatriz[z]= 0;
-    for (int o= 0; o< 9; o++){
-      int i2= 3*(i/3)+ (o/3);
-      int k2= 3*(i%3)+ (o%3);
-      if (n->sudo[i2][k2] != 0){
-        if (submatriz[n->sudo[i2][k2]] == 1) return 0;
-        else submatriz[n->sudo[i2][k2]]= 1;
+    for (int z=0; z<10; z++) matriz[z]= 0;
+    for (int k= 0; k< 9; k++){
+      int subi= 3*(i/3)+ (k/3);
+      int subk= 3*(i%3)+ (k%3);
+      if (n->sudo[subi][subk] != 0){
+        if (matriz[n->sudo[subi][subk]] == 1) return 0;
+        else matriz[n->sudo[subi][subk]]= 1;
       }
     }
 	}
@@ -112,10 +112,38 @@ List* get_adj_nodes(Node* n){
 
 
 int is_final(Node* n){
-    return 0;
+  for(int i=0; i<9; i++){
+    for(int j=0; j<9; j++){
+      if(n->sudo[i][j] == 0){
+        return 0;
+      }
+    }
+  }
+  return 1;
 }
 
 Node* DFS(Node* initial, int* cont){
+  Stack* Stack = createStack();
+  push(Stack,initial);
+  while(!is_empty(Stack))
+  {
+    Node* nodo = top(Stack);
+    pop(Stack);
+    (*cont)++;
+    if(is_final(nodo))
+    {
+      return nodo;
+    }
+    List* lista = get_adj_nodes(nodo);
+    Node* aux = first(lista);
+    while(aux)
+    {
+      push(Stack,aux);
+      aux = next(lista);
+    }
+    free(nodo);
+  }
+  
   return NULL;
 }
 
