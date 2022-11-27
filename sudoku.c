@@ -47,17 +47,39 @@ int is_valid(Node* n){
   int fila[10];
   int columna[10];
   int matriz[10];
-  int i, x, y;
   
-  for (i=0; i<9; i++){
-    for (x=0; x<10; x++) fila[x]= 0;
-    for (y=0; y<9; y++){
-      if (n->sudo[i][y] != 0){
-        if (fila[n->sudo[i][y]] == 1) return 0;
-        else fila[n->sudo[i][y]]= 1;
+  for (int i=0; i<9; i++){
+    for (int x=0; x<10; x++) fila[x]= 0;
+    for (int k=0; k<9; k++){
+      if (n->sudo[i][k] != 0){
+        if (fila[n->sudo[i][k]] == 1) return 0;
+        else fila[n->sudo[i][k]]= 1;
       }
     }
   }
+
+  for (int i=0; i<9; i++){
+    for (int y=0; y<10; y++) columna[y]= 0;
+    for (int k=0; k<9; k++){
+      if (n->sudo[k][i] != 0){
+      	if (columna[n->sudo[k][i]] == 1) return 0;
+        else columna[n->sudo[k][i]]= 1;
+      }
+    }
+  }
+
+  for (int i=0; i< 9; i++){
+    for (int z=0; z<10; z++) submatriz[z]= 0;
+    for (int k= 0; k< 9; k++){
+      int subi= 3*(i/3)+ (k/3);
+      int subk= 3*(i%3)+ (k%3);
+      if (n->sudo[subi][subk] != 0){
+        if (submatriz[n->sudo[subi][subk]] == 1) return 0;
+        else submatriz[n->sudo[subi][subk]]= 1;
+      }
+    }
+	}
+  return 1;
 }
 
 
