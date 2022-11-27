@@ -1,0 +1,19 @@
+Sun 27 Nov 2022 10:53:17 PM UTC: 
+ sudoku.c | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:66:12: error: ‘list’ undeclared (first use in this function); did you mean ‘lista’?
+   66 |     return list;
+      |            ^~~~
+      |            lista
+sudoku.c:66:12: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:53:11: error: unused variable ‘lista’ [-Werror=unused-variable]
+   53 |     List* lista=createList();
+      |           ^~~~~
+sudoku.c:67:1: error: control reaches end of non-void function [-Werror=return-type]
+   67 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+f143852

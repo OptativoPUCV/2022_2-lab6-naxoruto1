@@ -50,7 +50,19 @@ int is_valid(Node* n){
 
 
 List* get_adj_nodes(Node* n){
-    List* list=createList();
+    List* lista=createList();
+    int i;
+    int k;
+    for (i = 0; i < 9; i++)
+    {
+      for (k = 0; k < 9; k++)
+      {
+        if (n->sudo[i][k] == 0)
+        {
+          
+        }
+      }
+    }
     return list;
 }
 
