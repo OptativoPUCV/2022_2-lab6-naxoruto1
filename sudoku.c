@@ -44,8 +44,20 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-
-    return 1;
+  int fila[10];
+  int columna[10];
+  int matriz[10];
+  int i, x, y;
+  
+  for (i=0; i<9; i++){
+    for (x=0; x<10; x++) fila[x]= 0;
+    for (y=0; y<9; y++){
+      if (n->sudo[i][y] != 0){
+        if (fila[n->sudo[i][y]] == 1) return 0;
+        else fila[n->sudo[i][y]]= 1;
+      }
+    }
+  }
 }
 
 
