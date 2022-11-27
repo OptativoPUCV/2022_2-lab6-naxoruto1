@@ -47,8 +47,6 @@ int is_valid(Node* n){
   int fila[10];
   int columna[10];
   int submatriz[10];
-  int i, o, p;
-  int x, y, z; //o-k
   
   for (int i=0; i<9; i++){
     for (int x=0; x<10; x++) fila[x]= 0;
