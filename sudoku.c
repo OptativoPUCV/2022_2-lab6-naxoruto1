@@ -130,11 +130,11 @@ Node* DFS(Node* initial, int* cont){
     pop(Stack);
     (*cont)++;
     if(is_final(nodo)) return nodo;
-    List* lista = get_adj_nodes(nodo);
-    Node* aux = first(lista);
+    List* list = get_adj_nodes(nodo);
+    Node* aux = first(list);
     while(aux){
       push(Stack,aux);
-      aux = next(lista);
+      aux = next(list);
     }
   }
   
