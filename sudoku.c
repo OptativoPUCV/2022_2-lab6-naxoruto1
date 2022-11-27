@@ -65,11 +65,11 @@ List* get_adj_nodes(Node* n){
             if (is_valid(n))
             {
               Node* adjNode = copy(n);
-              pushBack(list, adjNode);
+              pushBack(lista, adjNode);
             }
           }
           n->sudo[i][k] = 0;
-          return list;
+          return lista;
         }
       }
     }
