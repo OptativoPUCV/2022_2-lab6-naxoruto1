@@ -44,7 +44,7 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  int fila[10];
+  //int fila[10];
   int columna[10];
   int submatriz[10];
   
