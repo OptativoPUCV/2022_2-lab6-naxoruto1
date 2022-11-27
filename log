@@ -80,3 +80,36 @@ Sun 27 Nov 2022 10:57:29 PM UTC:
  tests:  6|2
 total_score: 45/70
 e807022
+Sun 27 Nov 2022 10:59:58 PM UTC: 
+ sudoku.c | 26 ++++++++++++++------------
+ 1 file changed, 14 insertions(+), 12 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:57:29: error: ‘k’ undeclared (first use in this function)
+   57 |         if (fila[n->sudo[i][k]] == 1) return 0;
+      |                             ^
+sudoku.c:57:29: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:51:13: error: unused variable ‘z’ [-Werror=unused-variable]
+   51 |   int x, y, z; //o-k
+      |             ^
+sudoku.c:51:10: error: unused variable ‘y’ [-Werror=unused-variable]
+   51 |   int x, y, z; //o-k
+      |          ^
+sudoku.c:51:7: error: unused variable ‘x’ [-Werror=unused-variable]
+   51 |   int x, y, z; //o-k
+      |       ^
+sudoku.c:50:13: error: unused variable ‘p’ [-Werror=unused-variable]
+   50 |   int i, o, p;
+      |             ^
+sudoku.c:50:10: error: unused variable ‘o’ [-Werror=unused-variable]
+   50 |   int i, o, p;
+      |          ^
+sudoku.c:50:7: error: unused variable ‘i’ [-Werror=unused-variable]
+   50 |   int i, o, p;
+      |       ^
+sudoku.c:47:7: error: variable ‘fila’ set but not used [-Werror=unused-but-set-variable]
+   47 |   int fila[10];
+      |       ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+ebc7702
